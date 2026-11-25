@@ -9,6 +9,16 @@
       t.closest('.site-header').classList.toggle('menu-open', open);
     });
   }
+  // Aufgeklapptes Menü: Höhe bis zum unteren Bildschirmrand, damit die Buttons sichtbar haften
+  if (n) {
+    var fit = function () {
+      var kopf = n.closest('.site-header').getBoundingClientRect().bottom;
+      n.style.setProperty('--nav-max', (window.innerHeight - kopf) + 'px');
+    };
+    fit();
+    window.addEventListener('scroll', fit, { passive: true });
+    window.addEventListener('resize', fit);
+  }
   // Kopfzeile der Startseite: über dem Hero durchsichtig, beim Scrollen hell
   var h = document.querySelector('.site-header');
   if (h) {

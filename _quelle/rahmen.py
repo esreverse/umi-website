@@ -175,7 +175,7 @@ def header(page):
     return f"""{preview}<header class="site-header"><div class="wrap">
 <a class="brand" href="{rel('')}" aria-label="UMI Stuttgart, zur Startseite">{mark('dach')}<div><b>UMI</b><span>Stuttgart</span></div></a>
 <button class="menu-toggle" aria-expanded="false" aria-controls="hauptmenue">Menü</button>
-<nav class="nav" id="hauptmenue" aria-label="Hauptmenü">{''.join(items)}<a href="{rel('terminvereinbarung/')}" class="mob-only">Termin und Kontakt</a></nav>
+<nav class="nav" id="hauptmenue" aria-label="Hauptmenü">{''.join(items)}<a href="{rel('terminvereinbarung/')}" class="mob-only">Termin und Kontakt</a><div class="nav-cta">{tel('btn ghost', 'Anrufen')}{book('Termin buchen')}</div></nav>
 <div class="head-actions">{tel('tel')}{book('Termin buchen', 'btn small')}</div>
 </div></header>"""
 
@@ -204,8 +204,7 @@ def footer():
 <p class="small" style="margin-top:28px">Öffnungszeiten: {C.OEFFNUNGSZEITEN}</p>
 <div class="legal"><span>© {y} UMI Stuttgart GmbH</span>
 <span>{a('impressum/', 'Impressum')} · {a('datenschutzerklaerung-umi-stuttgart-gmbh/', 'Datenschutz')} · {a('gutscheinbedingungen/', 'Gutscheinbedingungen')} · <a href="{C.INSTAGRAM}" rel="noopener" target="_blank">Instagram</a> · <a href="{C.FACEBOOK}" rel="noopener" target="_blank">Facebook</a></span></div>
-</div></footer>
-<div class="mobile-bar">{tel('btn ghost', 'Anrufen')}{book('Termin buchen')}</div>"""
+</div></footer>"""
 
 
 def clinic_ld():
