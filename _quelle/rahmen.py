@@ -10,7 +10,7 @@ Fuß, Preise und Links überall gleich bleiben.
 Wird über build.py aufgerufen.
 
 Ohne --live entsteht die Vorschau: Jede Seite trägt "noindex", robots.txt sperrt
-alle Suchmaschinen, oben steht ein Vorschau-Hinweis.
+alle Suchmaschinen.
 """
 import json
 import os
@@ -170,9 +170,7 @@ def header(page):
             continue
         cls = ' class="hl"' if key == "gut" else ""
         items.append(f'<a href="{rel(target)}"{cur}{cls}>{label}</a>')
-    preview = ('<div class="preview-bar">Vorschau der neuen Website · nicht öffentlich · '
-               'einzelne Preise folgen</div>') if PREVIEW else ""
-    return f"""{preview}<header class="site-header"><div class="wrap">
+    return f"""<header class="site-header"><div class="wrap">
 <a class="brand" href="{rel('')}" aria-label="UMI Stuttgart, zur Startseite">{mark('dach')}<div><b>UMI</b><span>Stuttgart</span></div></a>
 <button class="menu-toggle" aria-expanded="false" aria-controls="hauptmenue">Menü</button>
 <nav class="nav" id="hauptmenue" aria-label="Hauptmenü">{''.join(items)}<a href="{rel('terminvereinbarung/')}" class="mob-only">Termin und Kontakt</a><div class="nav-cta">{tel('btn ghost', 'Anrufen')}{book('Termin buchen')}</div></nav>

@@ -22,7 +22,7 @@ Neue, statische Website für [umi-stuttgart.de](https://umi-stuttgart.de): reine
 
 ## Vorschau und Veröffentlichung
 
-- **Vorschau** (Standard): `python3 _quelle/build.py`. Jede Seite trägt `noindex`, `robots.txt` sperrt alle Suchmaschinen, oben steht ein Vorschau-Hinweis. So macht die Vorschau der alten Seite keine Konkurrenz.
+- **Vorschau** (Standard): `python3 _quelle/build.py`. Jede Seite trägt `noindex` und `robots.txt` sperrt alle Suchmaschinen. So macht die Vorschau der alten Seite keine Konkurrenz.
 - **Livegang**: `python3 _quelle/build.py --live` erzeugt dieselben Seiten ohne Sperre. Danach alles außer `_quelle/`, `README.md` und `.git` per SFTP in den Webspace-Ordner von umi-stuttgart.de bei Host Europe laden. Vorher die alte WordPress-Installation sichern.
 
 ## Vor dem Livegang offen
