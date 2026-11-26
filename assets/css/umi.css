@@ -93,10 +93,6 @@ li{margin:.25em 0}
 .btn[href^="tel:"]::after{--i:var(--i-phone)}
 .btn[href*="doctolib"]::after{--i:var(--i-calendar)}
 .btn:not([href^="tel:"],[href*="doctolib"]):hover::after{transform:translateX(2px)}
-.btn.ghost,.btn.dark{background:var(--ink);color:#fff}
-.btn.ghost:hover,.btn.dark:hover{background:var(--umber);color:#fff}
-.hero-start .btn.ghost,.bg-dark .btn.ghost{background:#fff;color:var(--ink)}
-.hero-start .btn.ghost:hover,.bg-dark .btn.ghost:hover{background:var(--sand-deep);color:var(--ink)}
 .btn.dark,.btn.small.ghost{padding:10px 20px}
 .btn.dark::after,.btn.small.ghost::after{display:none}
 .btn.light{background:#fff}
@@ -246,11 +242,7 @@ a.card:hover{border-color:var(--terra)}
 .bg-soft .banner{color:var(--ink)}
 .bg-soft .banner .eyebrow{color:var(--terra-text)}
 .banner h2{font-size:var(--h-2xl);max-width:760px}
-.banner .btn:not(.ghost){background:var(--ink);color:#fff}
-.banner .btn:not(.ghost):hover{background:var(--umber)}
 .bg-soft .banner{background:none;min-height:0}
-.bg-soft .banner .btn:not(.ghost){background:var(--peach);color:#fff}
-.bg-soft .banner .btn:not(.ghost):hover{background:var(--slate-hover)}
 
 /* Hinweisband */
 .hint{display:flex;gap:16px 32px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
@@ -389,8 +381,6 @@ a.card:hover{border-color:var(--terra)}
   .dd-group{margin-bottom:16px;padding-left:16px}
   .nav .dd-menu a{border:0;padding:8px 0}
 }
-.bg-dark .btn.light:not(.ghost){background:var(--mist-blue);color:var(--ink)}
-.bg-dark .btn.light:not(.ghost):hover{background:#D5DEE3}
 .bg-dark .claim{padding:8px 0}
 /* Hero mit Bild: Personen rechts, Text links */
 .hero-start:has(.slot){background:#23301f}
@@ -411,5 +401,14 @@ a.card:hover{border-color:var(--terra)}
   .nav .nav-cta .btn{min-height:52px;padding:10px 20px;border:0;font-size:var(--p-m);font-weight:var(--w-strong);justify-content:space-between}
   .nav .nav-cta .btn:hover{opacity:1}
 }
-.hero-start .btn:not(.ghost){background:var(--mist-blue);color:var(--ink)}
-.hero-start .btn:not(.ghost):hover{background:#D5DEE3;color:var(--ink)}
+/* Buttons: Primary gefüllt, Secondary als Outline. Auf Bild/dunklem Grund invertiert. */
+.btn.ghost,.btn.dark{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover,.btn.dark:hover{background:var(--ink);color:#fff}
+:is(.hero-start,.bg-dark,.banner,.home .site-header:not(.scrolled)) .btn:not(.ghost,.dark){background:var(--mist-blue);color:var(--ink)}
+:is(.hero-start,.bg-dark,.banner,.home .site-header:not(.scrolled)) .btn:not(.ghost,.dark):hover{background:#fff;color:var(--ink)}
+:is(.hero-start,.bg-dark,.banner) :is(.btn.ghost,.btn.dark){background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px #fff}
+:is(.hero-start,.bg-dark,.banner) :is(.btn.ghost,.btn.dark):hover{background:#fff;color:var(--ink)}
+.bg-soft .banner .btn:not(.ghost,.dark){background:var(--peach);color:#fff}
+.bg-soft .banner .btn:not(.ghost,.dark):hover{background:var(--slate-hover);color:#fff}
+.bg-soft .banner :is(.btn.ghost,.btn.dark){color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.bg-soft .banner :is(.btn.ghost,.btn.dark):hover{background:var(--ink);color:#fff}
