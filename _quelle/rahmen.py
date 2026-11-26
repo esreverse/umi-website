@@ -121,9 +121,9 @@ def faq(items, heading="Fragen und Antworten"):
 def mark(variant="dach", size=None):
     """UMI-Bildmarke (nachgezeichnet aus dem Linien-Design)."""
     cols = {
-        "dach": ("#E08D5F", "#573B24", "#190301"),
-        "med": ("#E08D5F", "#573B24", "#693916"),
-        "lon": ("#FFB57F", "#E08D5F", "#D9774C"),
+        "dach": ("#6F8796", "#3E454D", "#190301"),
+        "med": ("#6F8796", "#3E454D", "#3E454D"),
+        "lon": ("#BCC8CF", "#6F8796", "#55707F"),
         "light": ("#FFFFFF", "#FFFFFF", "#FFFFFF"),
     }[variant]
     s = f' width="{size}" height="{size}"' if size else ""

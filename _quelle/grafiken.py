@@ -6,7 +6,7 @@ Fehlt eine Datei, bleibt der Farbverlauf. Startseiten-Hero: bild-hero.webp
 import os
 import rahmen as R
 
-INK, BROWN, CLAY, PEACH, TERRA, SAND = "#190301", "#573B24", "#E08D5F", "#FFB57F", "#B14F25", "#ECE8D7"
+INK, BROWN, CLAY, PEACH, TERRA, SAND = "#190301", "#573B24", "#6F8796", "#BCC8CF", "#55707F", "#ECE8D7"
 
 
 ALT = {
