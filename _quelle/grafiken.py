@@ -102,13 +102,14 @@ def filterprinzip():
 <text x="336" y="386">Vereinfachte Darstellung</text></g></svg>"""
 
 
+# Lucide-Icons (lucide.dev, ISC-Lizenz)
 ICONS = {
-    "gespraech": '<path d="M6 8h26v18H18l-7 7v-7H6z"/><path d="M38 18h4v18h-5v6l-6-6H20v-4"/>',
-    "diagnostik": '<path d="M17 5h14M20 5v13L9 39a3 3 0 0 0 3 4h24a3 3 0 0 0 3-4L28 18V5"/><path d="M14 31h20"/>',
-    "plan": '<path d="M10 5h20l8 8v30H10z"/><path d="M30 5v8h8M17 22h14M17 29h14M17 36h8"/>',
-    "begleitung": '<circle cx="17" cy="13" r="6"/><circle cx="34" cy="16" r="5"/><path d="M5 42V33a11 11 0 0 1 24 0v9M33 27a9 9 0 0 1 11 8v7"/>',
+    'gespraech': '<path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/> <path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"/>',
+    'diagnostik': '<path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/> <path d="M6.453 15h11.094"/> <path d="M8.5 2h7"/>',
+    'plan': '<path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/> <path d="M14 2v5a1 1 0 0 0 1 1h5"/> <path d="M10 9H8"/> <path d="M16 13H8"/> <path d="M16 17H8"/>',
+    'begleitung': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/> <path d="M16 3.128a4 4 0 0 1 0 7.744"/> <path d="M22 21v-2a4 4 0 0 0-3-3.87"/> <circle cx="9" cy="7" r="4"/>',
 }
 
 
 def icon(name):
-    return f'<svg class="icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">{ICONS[name]}</svg>'
+    return f'<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">{ICONS[name]}</svg>'

@@ -61,6 +61,16 @@ def rel(target):
     return r + anchor
 
 
+PFEIL = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/></svg>'  # Lucide
+
+
+def stand(datei):
+    """Kurzer Fingerabdruck, damit Browser nach Änderungen nicht die alte Datei zeigen."""
+    import hashlib
+    with open(os.path.join(ROOT, datei), "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
+
+
 def a(target, text, cls=None, extra=""):
     c = f' class="{cls}"' if cls else ""
     href = rel(target)
@@ -261,6 +271,7 @@ def render(page):
     ld_html = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in lds)
     title = page.title
     body = body.replace("{{CRUMBS}}", crumbs_html(page))
+    body = body.replace(" →</span>", PFEIL + "</span>")
     base = ""
     if page.path == "404":
         base = f'<base href="{C.BASIS_LIVE if LIVE else C.BASIS_VORSCHAU}">\n'
@@ -280,7 +291,7 @@ def render(page):
 <meta property="og:description" content="{page.desc}">
 <link rel="icon" href="{rel('assets/img/favicon.svg')}" type="image/svg+xml">
 <link rel="preload" href="{rel('assets/fonts/season-sans-vf.woff2')}" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{rel('assets/css/umi.css')}">
+<link rel="stylesheet" href="{rel('assets/css/umi.css')}?v={stand('assets/css/umi.css')}">
 <meta name="theme-color" content="#FBF9F4">
 {ld_html}
 </head>
@@ -291,7 +302,7 @@ def render(page):
 {body}
 </main>
 {footer()}
-<script src="{rel('assets/js/umi.js')}" defer></script>
+<script src="{rel('assets/js/umi.js')}?v={stand('assets/js/umi.js')}" defer></script>
 </body>
 </html>
 """
